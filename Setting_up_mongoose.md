@@ -42,4 +42,14 @@ Mongoose is a popular ODM (Object Data Modeling) library for MongoDB and Node.js
 
 > `module.exports = mongoose.model('User', userSchema);`
 
+## Creating a User Data using the schema
+
+> `const newUser = new User({
+  name: 'John Doe',
+  email: 'johndoe@example.com',
+  password: 'password123'
+});`
+
+>  
+
 > 
