@@ -13,6 +13,33 @@ Mongoose is a popular ODM (Object Data Modeling) library for MongoDB and Node.js
 > `mongoose.connect('mongodb://localhost:27017/myDatabase', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+}).then(() => console.log('MongoDB connected'))
+  .catch((err) => console.log(err));`
+
+## Defining a Schema. Schemas define the structure of the documents in your collection.
+
+> `const Schema = mongoose.Schema;`
+
+> `const userSchema = new Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
 });`
 
+> `module.exports = mongoose.model('User', userSchema);`
 
+> 
