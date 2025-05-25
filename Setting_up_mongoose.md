@@ -6,9 +6,10 @@ Mongoose is a popular ODM (Object Data Modeling) library for MongoDB and Node.js
 - Includes built-in validation to ensure data consistency.
 - Enables easy querying and data relationships with chain query methods.
 
+## Import mongoose in the application
 > `const mongoose = require('mongoose');`
-  - Import mongoose in the application
 
+## Connect mongo db database
 > `mongoose.connect('mongodb://localhost:27017/myDatabase', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
