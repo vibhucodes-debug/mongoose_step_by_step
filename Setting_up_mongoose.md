@@ -40,7 +40,7 @@ Mongoose is a popular ODM (Object Data Modeling) library for MongoDB and Node.js
 
 > `module.exports = mongoose.model('User', userSchema);`
 
-## Creating a User Data using the schema
+## Creating a User Data using the Schema
 
 > `const newUser = new User({
   name: 'Vaibhav Sharma',
@@ -54,8 +54,23 @@ Mongoose is a popular ODM (Object Data Modeling) library for MongoDB and Node.js
   `.then(() => console.log('User created'))` \
   `.catch((err) => console.log(err));`
 
-## Updating an Object in mongoose
+## Reading the data from the database
+
+> `User.find()` \
+  `.then((users) => console.log(users))` \
+  `.catch((err) => console.log(err));`
+
+
+## Updating an Object to the database
 
 > `User.findOneAndUpdate({name:'Vaibhav Sharma'},{name:'Vaibhav Only'})`
+
+## Deleting an object from the database
+
+> `User.deleteOne({name:'Vaibhav Sharma})` \
+    `.then(console.log('User deleted')` \
+    `.catch((error)=>console.log(error))` \
+
+
 
 
