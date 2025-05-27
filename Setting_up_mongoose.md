@@ -43,11 +43,19 @@ Mongoose is a popular ODM (Object Data Modeling) library for MongoDB and Node.js
 ## Creating a User Data using the schema
 
 > `const newUser = new User({
-  name: 'John Doe',
-  email: 'johndoe@example.com',
+  name: 'Vaibhav Sharma',
+  email: 'vaibhavsha@example.com',
   password: 'password123'
 });`
 
->  
+## Saving the created User data 
 
-> 
+> `newUser.save()` \
+  `.then(() => console.log('User created'))` \
+  `.catch((err) => console.log(err));`
+
+## Updating an Object in mongoose
+
+> `User.findOneAndUpdate({name:'Vaibhav Sharma'},{name:'Vaibhav Only'})`
+
+
