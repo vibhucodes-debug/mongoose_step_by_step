@@ -5,12 +5,12 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/my_database', { useNewUrlParser: true });
 > Mongoose creates a default connection object when you call mongoose.connect().
 
-const db = mongoose.connection; > Default connection object
+const db = mongoose.connection;  *Default connection object*
 
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log('Database connected successfully');
-});
+db.on('error', console.error.bind(console, 'connection error:')); \
+db.once('open', function() { \
+  console.log('Database connected successfully'); \
+}); \
 
 - Here's what it does:
   mongoose.connection gives you direct access to the connection instance.
