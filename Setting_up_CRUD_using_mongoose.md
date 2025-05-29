@@ -48,11 +48,17 @@ Mongoose is a popular ODM (Object Data Modeling) library for MongoDB and Node.js
   password: 'password123'
 });`
 
-## Saving the created User data 
+>  Saving the created User data 
 
 > `newUser.save()` \
   `.then(() => console.log('User created'))` \
   `.catch((err) => console.log(err));`
+
+> *Create Method*
+> `User.create({ name: 'Bob', email: 'bob@example.com', age: 30 })` \
+  `.then(user => console.log('User created:', user))` \
+  `.catch(err => console.error(err));`
+
 
 ## Reading the data from the database
 
@@ -69,7 +75,29 @@ Mongoose is a popular ODM (Object Data Modeling) library for MongoDB and Node.js
 
 > `User.deleteOne({name:'Vaibhav Sharma})` \
     `.then(console.log('User deleted')` \
-    `.catch((error)=>console.log(error))` \
+    `.catch((error)=>console.log(error))`
+
+
+# Other important Mongoose Queries
+
+## Finding
+> `User.find()` Find all users
+> `User.find({ age: { $gt: 20 } })` For users older than 20
+> `User.findOne({ email: 'alice@example.com' })` Finding one specific user
+> `User.findById('60f7c0d5e1b2c8a1d4e8b123')`
+
+## Updating
+> `User.updateOne({ name: 'Alice' }, { age: 26 })` Update age of document with name 'Alice'
+> `User.findByIdAndUpdate('60f7c0d5e1b2c8a1d4e8b123', { age: 27 }, { new: true })` Find a document with ID and update the following fields
+
+## Deleting
+> `User.deleteOne({name:'George'})`
+> `User.findByIdAndDelete('60f7c0d5e1b2c8a1d4e8b123')`
+
+
+
+
+
 
 
 
